@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FCC Drum machine demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script>
+        function play(str){
+            if (str === "q" || str === "Q") {
+                document.getElementById("display").innerText = "4Minute - Crazy"
+            } else if (str === "w" || str === "W") {
+                document.getElementById("display").innerText = "9Muses - Glue"
+            } else if (str === "e" || str === "E") {
+                document.getElementById("display").innerText = "Bestie - Love Options"
+            } else if (str === "a" || str === "A") {
+                document.getElementById("display").innerText = "Exid - DDD"
+            } else if (str === "s" || str === "S") {
+                document.getElementById("display").innerText = "Girls Generation - Gee"
+            } else if (str === "d" || str === "D") {
+                document.getElementById("display").innerText = "Hello Venus - I'm Ill"
+            } else if (str === "z" || str === "Z") {
+                document.getElementById("display").innerText = "Kara - Mamma Mia"
+            } else if (str === "x" || str === "X") {
+                document.getElementById("display").innerText = "Rainbow - A"
+            } else if (str === "c" || str === "C") {
+                document.getElementById("display").innerText = "Twice - Feel Special"
+            }
+
+            var audio = document.getElementById(str);
+            audio.play();
+        }
+
+        window.document.onkeyup = function(event){
+            let keypush = event.key
+            if (keypush === "q" || keypush === "Q") {
+                play(`Q`);
+            } else if (keypush === "w" || keypush === "W") {
+                play(`W`)
+            } else if (keypush === "e" || keypush === "E") {
+                play(`E`)
+            } else if (keypush === "a" || keypush === "A") {
+                play(`A`)
+            } else if (keypush === "s" || keypush === "S") {
+                play(`S`)
+            } else if (keypush === "d" || keypush === "D") {
+                play(`D`)
+            } else if (keypush === "z" || keypush === "Z") {
+                play(`Z`)
+            } else if (keypush === "x" || keypush === "X") {
+                play(`X`)
+            } else if (keypush === "c" || keypush === "C") {
+                play(`C`)
+            }
+        }
+    </script>
+    <style>
+        .img-fluid {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="drum-machine" class="container-fluid text-center" >
+        <h1 class="text-center">Iconic K-pop intros!</h1>
+        <div class="card my-3">
+            <div class="card-body">
+                <div id="display">The song name will be displayed here</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="./img/4Minute-crazy.jpeg" class="img-fluid">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-0" onclick="play(`Q`)">Q
+                    <audio src="./clips/4MINUTE(crazy).mp3" class="clip" id="Q"></audio>
+                </button>
+            </div>
+            <div class="col-sm">
+                <img src="./img/Nine-Muses-image.jpg" class="img-fluid">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-1" onclick="play(`W`)">W
+                    <audio src="./clips/9MUSES(glue).mp3" class="clip" id="W"></audio>
+                </button>
+            </div>
+            <div class="col-sm">
+                <img src="./img/BESTie-Love-Options.webp" class="img-fluid">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-2" onclick="play(`E`)">E
+                    <audio src="./clips/BESTIE(loveoptions).mp3" class="clip" id="E"></audio>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="./img/exid.png" class="img-thumbnail">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-3" onclick="play(`A`)">A
+                    <audio src="./clips/EXID(ddd).mp3" class="clip" id="A"></audio>
+                </button>
+            </div>
+            <div class="col-sm">
+                <img src="./img/snsd.jpeg" class="img-thumbnail">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-4" onclick="play(`S`)">S
+                    <audio src="./clips/GIRLSGENERATION(gee).mp3" class="clip" id="S"></audio>
+                </button>
+            </div>
+            <div class="col-sm">
+                <img src="./img/hellovenus-ill.webp" class="img-thumbnail">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-5" onclick="play(`D`)">D
+                    <audio src="./clips/HELLOVENUS(imill).mp3" class="clip" id="D"></audio>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <img src="./img/kara.jpeg" class="img-thumbnail">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-6" onclick="play(`Z`)">Z
+                    <audio src="./clips/KARA(mammamia).mp3" class="clip" id="Z"></audio>
+                </button>
+            </div>
+            <div class="col-sm">
+                <img src="./img/rainbow.jpg" class="img-thumbnail">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-7" onclick="play(`X`)">X
+                    <audio src="./clips/RAINBOW(a).mp3" class="clip" id="X"></audio>
+                </button>
+            </div>
+            <div class="col-sm">
+                <img src="./img/twice.jpeg" class="img-thumbnail">
+                <button class="drum-pad btn btn-block btn-primary" id="drum-8" onclick="play(`C`)">C
+                    <audio src="./clips/TWICE(feelspecial).mp3" class="clip" id="C"></audio>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
